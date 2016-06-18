@@ -39,6 +39,7 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
+      
         return (
             <div className="foodOffer">
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
@@ -76,8 +77,13 @@ var FoodOfferBox = React.createClass({
     },
     render: function() {
         
+          var styleFoodOfferBox = {
+            border: "5px solid green"
+        };
+
         return (
-            <div className="foodOfferBox">
+            <div className="foodOfferBox" style = {styleFoodOfferBox}>
+                
                 <h1>Food Offers</h1>
                 <FoodOfferList data={this.state.data} />
             </div>
@@ -90,6 +96,7 @@ var FoodOfferList = React.createClass({
         data: React.PropTypes.array.isRequired
     },
     render: function() {
+
         var foodOfferNodes = this.props.data.map(function(foodOffer, index) {
             return (
                 // `key` is a React-specific concept and is not mandatory for the
