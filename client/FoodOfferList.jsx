@@ -9,14 +9,16 @@ var urls = require('./urls');
 
 var FoodOffer = React.createClass({
     propTypes: {
-        author: React.PropTypes.string.isRequired
+        title: React.PropTypes.string.isRequired
     },
     render: function() {
         var rawMarkup = marked(this.props.children.toString());
+        console.log("Trying to show rawMarkup");
+        console.log(rawMarkup);
         return (
             <div className="foodOffer">
                 <h2 className="foodOfferAuthor">
-                    {this.props.author}
+                    {this.props.title}
                 </h2>
                 <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
             </div>
@@ -29,13 +31,12 @@ var FoodOfferBox = React.createClass({
     },
     loadFoodOffersFromServer: function() {
         $.ajax({
-            url: urls.GET.success,
+            url: urls.GET.allEvents,
             dataType: 'json',
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
-                console.log("Checking where error occures");
                 console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });

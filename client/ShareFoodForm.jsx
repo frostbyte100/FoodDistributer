@@ -29,6 +29,7 @@ var ShareFoodForm = React.createClass({
                 console.log(response);
             },
             error: function(xhr, status, err) {
+                console.log("fbaduibfiea!!!!!");
                 console.error(urls.POST.newEvent, status, err.toString());
             }.bind(this)
 

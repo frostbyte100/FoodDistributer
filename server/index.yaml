@@ -24,12 +24,18 @@ indexes:
   properties:
   - name: created
 
+- kind: Comment
+  ancestor: yes
+  properties:
+  - name: created
+    direction: desc
+
 - kind: Event
   ancestor: yes
   properties:
   - name: created
 
-- kind: Comment
+- kind: Event
   ancestor: yes
   properties:
   - name: created

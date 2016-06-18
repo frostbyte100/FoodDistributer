@@ -27,4 +27,4 @@ def create_new_event():
     )
     event.put()
     response.content_type = 'application/json'
-    return models.foodEvent_to_json(event)
+    return models.event_to_json(event)
