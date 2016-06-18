@@ -12,7 +12,22 @@ var ShareFoodForm = React.createClass({
     },
     
     handleSubmit: function() {
-        
+        var data = {
+            food: this.state.food,
+            address: this.state.address,
+            image: this.state.image,
+            time: this.state.time,
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/foodevents',
+            data: data,
+        }).done(function(data) {
+                self.clearForm()
+            })
+            .fail(function(jqXhr) {
+                console.log('failed to register');
+            });
     },
 
     handleChange: function (name, e) {
