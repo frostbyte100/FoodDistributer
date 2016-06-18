@@ -1,10 +1,10 @@
 module.exports = {
     GET: {
-        // allComments: '/comments/',
-        allEvents: '/foodevents/'
+        allComments: '/comments/',
+        allEvents: '/events/'
     },
     POST: {
-        // newComment: '/comment',
-        newFoodEvent: '/foodevent'
+        newComment: '/comment',
+        newEvent: '/event'
     },
 };

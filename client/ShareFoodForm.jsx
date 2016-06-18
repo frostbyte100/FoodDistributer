@@ -14,13 +14,13 @@ var ShareFoodForm = React.createClass({
 
     handleSubmit: function() {
         var data = {
-            food: this.state.food,
-            address: this.state.address,
-            image: this.state.image,
-            time: this.state.time,
+            food: "bfadiubfadiu",
+            address: "bfaifbadi",
+            image: "nfofado",
+            time: "ngodas",
         }
         $.ajax({
-            url: urls.POST.newFoodEvent,
+            url: urls.POST.newEvent,
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             type: 'POST',
@@ -29,7 +29,7 @@ var ShareFoodForm = React.createClass({
                 console.log(response);
             },
             error: function(xhr, status, err) {
-                console.error(urls.POST.foodevent, status, err.toString());
+                console.error(urls.POST.newEvent, status, err.toString());
             }.bind(this)
 
         });
@@ -43,7 +43,7 @@ var ShareFoodForm = React.createClass({
 
     render: function() {
         return (
-            <form className="commentForm" onSubmit={this.handleSubmit}>
+            <form className="foodOfferForm" onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Food" value={this.state.food} onChange={this.handleChange.bind(this, 'food')} />
                 <input type="text" placeholder="Address" value={this.state.address} onChange={this.handleChange.bind(this, 'address')} />
                 <input type="text" placeholder="Image" value={this.state.image} onChange={this.handleChange.bind(this, 'image')} />
