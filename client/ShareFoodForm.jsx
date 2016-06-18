@@ -1,4 +1,5 @@
 var React = require('react');
+var urls = require('./urls');
 
 var ShareFoodForm = React.createClass({
 
@@ -19,15 +20,19 @@ var ShareFoodForm = React.createClass({
             time: this.state.time,
         }
         $.ajax({
+            url: urls.POST.newFoodEvent,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
             type: 'POST',
-            url: '/foodevents',
-            data: data,
-        }).done(function(data) {
-                self.clearForm()
-            })
-            .fail(function(jqXhr) {
-                console.log('failed to register');
-            });
+            data: JSON.stringify(data),
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, status, err) {
+                console.error(urls.POST.foodevent, status, err.toString());
+            }.bind(this)
+
+        });
     },
 
     handleChange: function (name, e) {
