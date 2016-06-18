@@ -8,7 +8,7 @@ var ShareFoodForm = React.createClass({
             food: '',
             address: '',
             image: '',
-            time: '',
+            time: ''
         };
     },
 

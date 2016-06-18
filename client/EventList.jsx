@@ -27,7 +27,7 @@ var Event = React.createClass({
 var EventBox = React.createClass({
     propTypes: {
     },
-    loadCommentsFromServer: function() {
+    loadEventsFromServer: function() {
         $.ajax({
             url: urls.GET.success,
             dataType: 'json',
@@ -35,6 +35,7 @@ var EventBox = React.createClass({
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
+                console.log("Checking where error occures");
                 console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });
@@ -44,7 +45,7 @@ var EventBox = React.createClass({
         return {data: []};
     },
     componentDidMount: function() {
-        this.loadCommentsFromServer();
+        this.loadEventsFromServer();
         // killed this because it was too spammy when changing tabs
 
     },
