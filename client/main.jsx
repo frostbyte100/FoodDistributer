@@ -8,6 +8,7 @@ var Well = require('react-bootstrap').Well;
 
 var MainNav = require('./MainNav');
 var CommentList = require('./CommentList')
+var ShareFoodForm = require('./ShareFoodForm')
 
 
 var InterfaceComponent = React.createClass({
@@ -37,6 +38,7 @@ var InterfaceComponent = React.createClass({
             nav = 2;
             content = (
                 <Well>
+                    <ShareFoodForm />
                 </Well>
             );
         }
