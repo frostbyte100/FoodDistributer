@@ -14,6 +14,9 @@ var FoodOffer = React.createClass({
         image: React.PropTypes.string.isRequired,
         time: React.PropTypes.string.isRequired,
     },
+    checkURL: function(url) {
+        return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+    },
     render: function() {
         var styleFood = {
             color: '#202020',
@@ -27,8 +30,12 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
-        var styleImage = {
+        var styleImage = this.checkURL(this.props.image) ? {
             height: 200,
+            display: 'inline'
+        } : {
+            height: 200,
+            display: 'none'
         };
         var styleTime = {
             color: '#202020',
