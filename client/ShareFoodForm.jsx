@@ -10,7 +10,7 @@ var ShareFoodForm = React.createClass({
             time: '',
         };
     },
-    
+
     handleSubmit: function() {
         var data = {
             food: this.state.food,
