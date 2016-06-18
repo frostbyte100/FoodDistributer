@@ -15,14 +15,12 @@ var FoodOffer = React.createClass({
         time: React.PropTypes.string.isRequired,
     },
     render: function() {
-        var rawMarkup = marked(this.props.children.toString());
         return (
             <div className="foodOffer">
                 <span className="foodOfferFood">{this.props.food}</span>
                 <span className="foodOfferAddress">{this.props.address}</span>
                 <span className="foodOfferImage">{this.props.image}</span>
                 <span className="foodOfferTime">{this.props.time}</span>
-                <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
             </div>
         );
     }
@@ -73,9 +71,7 @@ var FoodOfferList = React.createClass({
                 // `key` is a React-specific concept and is not mandatory for the
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-                <FoodOffer food={foodOffer.food} address={foodOffer.address} image={foodOffer.image} time={foodOffer.time}  key={foodOffer.key}>
-                      {foodOffer.food}
-                </FoodOffer>
+                <FoodOffer food={foodOffer.food} address={foodOffer.address} image={foodOffer.image} time={foodOffer.time}  key={foodOffer.key} />
             );
         });
         return (
