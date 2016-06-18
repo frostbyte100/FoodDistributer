@@ -54,8 +54,8 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleFoodOffer = {
-            border: "5px solid blue", 
-            padding: 20,
+            
+            margin: 10,
           
 
         };
@@ -102,13 +102,8 @@ var FoodOfferBox = React.createClass({
         //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
-        
-          var styleFoodOfferBox = {
-            border: "5px solid green",
-        };
-
         return (
-            <div className="foodOfferBox" style = {styleFoodOfferBox}>
+            <div className="foodOfferBox">
                 
                 <h1>Food Offers</h1>
                 <FoodOfferList data={this.state.data} />
