@@ -15,12 +15,36 @@ var FoodOffer = React.createClass({
         time: React.PropTypes.string.isRequired,
     },
     render: function() {
+        var styleFood = {
+            color: '#202020',
+            fontSize: 20,
+            paddingRight: 20,
+            fontStyle: 'bold',
+        };
+        var styleAddress = {
+            color: '#202020',
+            fontSize: 20,
+            paddingRight: 20,
+            fontStyle: 'bold',
+        };
+        var styleImage = {
+            color: '#202020',
+            fontSize: 20,
+            paddingRight: 20,
+            fontStyle: 'bold',
+        };
+        var styleTime = {
+            color: '#202020',
+            fontSize: 20,
+            paddingRight: 20,
+            fontStyle: 'bold',
+        };
         return (
             <div className="foodOffer">
-                <span className="foodOfferFood">{this.props.food}</span>
-                <span className="foodOfferAddress">{this.props.address}</span>
-                <span className="foodOfferImage">{this.props.image}</span>
-                <span className="foodOfferTime">{this.props.time}</span>
+                <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
+                <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
+                <span className="foodOfferImage" style={styleImage}>{this.props.image}</span>
+                <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
             </div>
         );
     }
@@ -52,6 +76,7 @@ var FoodOfferBox = React.createClass({
         //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
+        
         return (
             <div className="foodOfferBox">
                 <h1>Food Offers</h1>
