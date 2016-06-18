@@ -39,9 +39,14 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
+        var styleFoodOffer = {
+            border: "5px solid blue", 
+            padding: 20,
+
+        };
       
         return (
-            <div className="foodOffer">
+            <div className="foodOffer" style = {styleFoodOffer}>
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
                 <span className="foodOfferImage" style={styleImage}>{this.props.image}</span>
