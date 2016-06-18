@@ -7,15 +7,15 @@ var marked = require('marked');
 
 var urls = require('./urls');
 
-var Comment = React.createClass({
+var FoodOffer = React.createClass({
     propTypes: {
         author: React.PropTypes.string.isRequired
     },
     render: function() {
         var rawMarkup = marked(this.props.children.toString());
         return (
-            <div className="comment">
-                <h2 className="commentAuthor">
+            <div className="foodOffer">
+                <h2 className="foodOfferAuthor">
                     {this.props.author}
                 </h2>
                 <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
@@ -24,10 +24,10 @@ var Comment = React.createClass({
     }
 });
 
-var CommentBox = React.createClass({
+var FoodOfferBox = React.createClass({
     propTypes: {
     },
-    loadCommentsFromServer: function() {
+    loadFoodOffersFromServer: function() {
         $.ajax({
             url: urls.GET.success,
             dataType: 'json',
@@ -44,41 +44,41 @@ var CommentBox = React.createClass({
         return {data: []};
     },
     componentDidMount: function() {
-        this.loadCommentsFromServer();
+        this.loadFoodOffersFromServer();
         // killed this because it was too spammy when changing tabs
-        //setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+        //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
         return (
-            <div className="commentBox">
-                <h1>Comments</h1>
-                <CommentList data={this.state.data} />
+            <div className="foodOfferBox">
+                <h1>Food Offers</h1>
+                <FoodOfferList data={this.state.data} />
             </div>
             );
     }
 });
 
-var CommentList = React.createClass({
+var FoodOfferList = React.createClass({
     propTypes: {
         data: React.PropTypes.array.isRequired
     },
     render: function() {
-        var commentNodes = this.props.data.map(function(comment, index) {
+        var foodOfferNodes = this.props.data.map(function(foodOffer, index) {
             return (
                 // `key` is a React-specific concept and is not mandatory for the
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-                <Comment author={comment.author} key={comment.key}>
-                      {comment.text}
-                </Comment>
+                <FoodOffer author={foodOffer.author} key={foodOffer.key}>
+                      {foodOffer.text}
+                </FoodOffer>
             );
         });
         return (
-            <div className="commentList">
-                {commentNodes}
+            <div className="foodOfferList">
+                {foodOfferNodes}
             </div>
         );
     }
 });
 
-module.exports = CommentBox;
+module.exports = FoodOfferBox;

@@ -43,7 +43,7 @@ var ShareFoodForm = React.createClass({
 
     render: function() {
         return (
-            <form className="commentForm" onSubmit={this.handleSubmit}>
+            <form className="foodOfferForm" onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Food" value={this.state.food} onChange={this.handleChange.bind(this, 'food')} />
                 <input type="text" placeholder="Address" value={this.state.address} onChange={this.handleChange.bind(this, 'address')} />
                 <input type="text" placeholder="Image" value={this.state.image} onChange={this.handleChange.bind(this, 'image')} />

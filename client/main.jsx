@@ -7,7 +7,7 @@ Backbone.$ = $;
 var Well = require('react-bootstrap').Well;
 
 var MainNav = require('./MainNav');
-var CommentList = require('./CommentList')
+var FoodOfferList = require('./FoodOfferList')
 var ShareFoodForm = require('./ShareFoodForm')
 
 
@@ -30,7 +30,7 @@ var InterfaceComponent = React.createClass({
             content = (
                 <Well>
                     <p>Welcome!</p>
-                    <CommentList />
+                    <FoodOfferList />
                 </Well>
             );
         }
