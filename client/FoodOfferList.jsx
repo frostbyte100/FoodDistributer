@@ -42,10 +42,10 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleImage = this.checkURL(this.props.image) ? {
-            height: 200,
+            height: 300,
             display: 'inline'
         } : {
-            height: 200,
+            height: 300,
             display: 'none'
         };
         var styleTime = {
@@ -55,13 +55,7 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleFoodOffer = {
-<<<<<<< HEAD
-            margin: 10,     
-=======
-
             margin: 10,
-
->>>>>>> 9b277958b9f34c2c501a5757f9ab68e91c9a8bbc
 
         };
         if (!this.state.isVisible) {
