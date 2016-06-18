@@ -55,13 +55,12 @@ var FoodOfferBox = React.createClass({
     },
     loadFoodOffersFromServer: function() {
         $.ajax({
-            url: urls.GET.success,
+            url: urls.GET.allEvents,
             dataType: 'json',
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
-                console.log("Checking where error occures");
                 console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });
