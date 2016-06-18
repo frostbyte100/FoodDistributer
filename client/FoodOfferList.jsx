@@ -50,13 +50,20 @@ var FoodOffer = React.createClass({
             padding: 20,
 
         };
+        var styleHide = {
+            fontSize: 50,
+        };
       
         return (
             <div className="foodOffer" style = {styleFoodOffer}>
+                <span className = "hideButton" style = {styleHide}> X </span>
+                
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
-                <img src={this.props.image} style={styleImage} />
                 <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
+                <img src={this.props.image} style={styleImage} />
+                
+
             </div>
         );
     }
