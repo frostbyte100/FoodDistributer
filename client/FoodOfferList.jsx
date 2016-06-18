@@ -62,7 +62,7 @@ var FoodOffer = React.createClass({
         }
         return (
             <div className="foodOffer" style = {styleFoodOffer}>
-                <span className = "hideButton" onClick = {this.onClick}> X </span>
+                <span className = "hideButton" onClick = {this.onClick}>&lt;Hide offer&gt; </span>
                 
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
