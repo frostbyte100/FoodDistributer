@@ -9,8 +9,9 @@ class Comment(ndb.Model):
 class FoodEvent(ndb.Model):
     foodType = ndb.StringProperty(required =True)
     address = ndb.StringProperty(required =True)
-    image64 = ndb.StringProperty(required =True)
-    time = ndb.DateTimeProperty(auto_now_add=True)
+    image64 = ndb.StringProperty(required =False)
+    created = ndb.DateTimeProperty(auto_now_add=True)
+    time = ndb.DateTimeProperty(required =False)
 
 def comment_to_json(comment):
     return {
@@ -22,8 +23,9 @@ def comment_to_json(comment):
 def foodEvent_to_json(event):
     return {
         'key': event.key.urlsafe(),
+        'created': str(event.created),
         'food': event.foodType,
         'address': event.address,
         'image': event.image64,
-        'time': event.time
+        'time': str(event.time)
     }
