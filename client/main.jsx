@@ -29,22 +29,14 @@ var InterfaceComponent = React.createClass({
             content = (
                 <Well>
                     <p>Welcome!</p>
-                </Well>
-            );
-        }
-        if (this.props.router.current[0] == 'notes') {
-            nav = 2;
-            content = (
-                <Well>
                     <CommentList />
                 </Well>
             );
         }
-        if (this.props.router.current[0] == 'todos') {
-            nav = 3;
+        if (this.props.router.current[0] == 'share') {
+            nav = 2;
             content = (
                 <Well>
-                    <p>TODO: replace with todos react tutorial</p>
                 </Well>
             );
         }
