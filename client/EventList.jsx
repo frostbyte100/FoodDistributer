@@ -69,7 +69,7 @@ var EventList = React.createClass({
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
                 <Event title={event.title} key={event.key}>
-                      {comment.text}
+                      {event.food}
                 </Event>
             );
         });

@@ -20,7 +20,7 @@ var ShareFoodForm = React.createClass({
             time: "ngodas",
         }
         $.ajax({
-            url: urls.POST.newComment,
+            url: urls.POST.newEvent,
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             type: 'POST',
@@ -29,7 +29,7 @@ var ShareFoodForm = React.createClass({
                 console.log(response);
             },
             error: function(xhr, status, err) {
-                console.error(urls.POST.newComment, status, err.toString());
+                console.error(urls.POST.newEvent, status, err.toString());
             }.bind(this)
 
         });

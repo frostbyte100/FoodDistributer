@@ -6,10 +6,10 @@ class Comment(ndb.Model):
     text = ndb.StringProperty()
     author = ndb.StringProperty()
 
-class FoodEvent(ndb.Model):
-    title = ndb.StringProperty(required = False)
-    foodType = ndb.StringProperty(required =True)
-    address = ndb.StringProperty(required =True)
+class Event(ndb.Model):
+    title = ndb.StringProperty(required =False)
+    foodType = ndb.StringProperty(required =False)
+    address = ndb.StringProperty(required =False )
     image64 = ndb.StringProperty(required =False)
     created = ndb.DateTimeProperty(auto_now_add=True)
     time = ndb.StringProperty(required =False)
@@ -21,7 +21,7 @@ def comment_to_json(comment):
         'text': comment.text,
         'author': comment.author
     }
-def foodEvent_to_json(event):
+def event_to_json(event):
     return {
         'key': event.key.urlsafe(),
         'title': event.title,
