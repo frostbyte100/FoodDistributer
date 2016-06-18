@@ -28,10 +28,7 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleImage = {
-            color: '#202020',
-            fontSize: 20,
-            paddingRight: 20,
-            fontStyle: 'bold',
+            height: 200,
         };
         var styleTime = {
             color: '#202020',
@@ -43,7 +40,7 @@ var FoodOffer = React.createClass({
             <div className="foodOffer">
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
-                <span className="foodOfferImage" style={styleImage}>{this.props.image}</span>
+                <img src={this.props.image} style={styleImage} />
                 <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
             </div>
         );
