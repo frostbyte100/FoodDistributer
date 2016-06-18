@@ -14,6 +14,11 @@ var FoodOffer = React.createClass({
         image: React.PropTypes.string.isRequired,
         time: React.PropTypes.string.isRequired,
     },
+
+    checkURL: function(url) {
+        return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
+    },
+
     render: function() {
         var styleFood = {
             color: '#202020',
@@ -27,11 +32,12 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
-        var styleImage = {
-            color: '#202020',
-            fontSize: 20,
-            paddingRight: 20,
-            fontStyle: 'bold',
+        var styleImage = this.checkURL(this.props.image) ? {
+            height: 200,
+            display: 'inline'
+        } : {
+            height: 200,
+            display: 'none'
         };
         var styleTime = {
             color: '#202020',
@@ -40,12 +46,25 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
 
+        var styleFoodOffer = {
+            border: "5px solid blue",
+            padding: 20,
+
+        };
+        var styleHide = {
+            fontSize: 50,
+        };
+
         return (
-            <div className="foodOffer">
+            <div className="foodOffer" style = {styleFoodOffer}>
+                <span className = "hideButton" style = {styleHide}> X </span>
+
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
-                <span className="foodOfferImage" style={styleImage}>{this.props.image}</span>
                 <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
+                <img src={this.props.image} style={styleImage} />
+
+
             </div>
         );
     }
