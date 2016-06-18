@@ -54,9 +54,7 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleFoodOffer = {
-            
-            margin: 10,
-          
+            margin: 10,     
 
         };
         if (!this.state.isVisible) {
