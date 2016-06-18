@@ -35,6 +35,7 @@ var FoodOfferBox = React.createClass({
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
+                console.log("Checking where error occures");
                 console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });
@@ -68,8 +69,8 @@ var FoodOfferList = React.createClass({
                 // `key` is a React-specific concept and is not mandatory for the
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-                <FoodOffer author={foodOffer.author} key={foodOffer.key}>
-                      {foodOffer.text}
+                <FoodOffer title={foodOffer.title} key={foodOffer.key}>
+                      {foodOffer.title}
                 </FoodOffer>
             );
         });
