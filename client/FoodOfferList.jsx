@@ -43,17 +43,17 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
+        
         var styleFoodOffer = {
-            border: "5px solid blue", 
-            padding: 20,
+            margin: 10
+        }
 
-        };
         var styleHide = {
             fontSize: 50,
         };
       
         return (
-            <div className="foodOffer" style = {styleFoodOffer}>
+            <div className="foodOffer" style= {styleFoodOffer} >
                 <span className = "hideButton" style = {styleHide}> X </span>
                 
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
@@ -92,15 +92,10 @@ var FoodOfferBox = React.createClass({
         //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
-        
-          var styleFoodOfferBox = {
-            border: "5px solid green"
-        };
 
         return (
-            <div className="foodOfferBox" style = {styleFoodOfferBox}>
-                
-                <h1>Food Offers</h1>
+            <div className="foodOfferBox" >                
+                <h1>List of Food Free Event</h1>
                 <FoodOfferList data={this.state.data} />
             </div>
             );
