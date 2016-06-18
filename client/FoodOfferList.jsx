@@ -14,9 +14,11 @@ var FoodOffer = React.createClass({
         image: React.PropTypes.string.isRequired,
         time: React.PropTypes.string.isRequired,
     },
+
     checkURL: function(url) {
         return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
     },
+
     render: function() {
         var styleFood = {
             color: '#202020',
