@@ -9,18 +9,18 @@ var urls = require('./urls');
 
 var FoodOffer = React.createClass({
     propTypes: {
-        title: React.PropTypes.string.isRequired
+        food: React.PropTypes.string.isRequired,
+        address: React.PropTypes.string.isRequired,
+        image: React.PropTypes.string.isRequired,
+        time: React.PropTypes.string.isRequired,
     },
     render: function() {
-        var rawMarkup = marked(this.props.children.toString());
-        console.log("Trying to show rawMarkup");
-        console.log(rawMarkup);
         return (
             <div className="foodOffer">
-                <h2 className="foodOfferAuthor">
-                    {this.props.title}
-                </h2>
-                <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+                <span className="foodOfferFood">{this.props.food}</span>
+                <span className="foodOfferAddress">{this.props.address}</span>
+                <span className="foodOfferImage">{this.props.image}</span>
+                <span className="foodOfferTime">{this.props.time}</span>
             </div>
         );
     }
@@ -43,7 +43,7 @@ var FoodOfferBox = React.createClass({
     },
 
     getInitialState: function() {
-        return {data: []};
+        return {data: [{food:'cake', address:'my house', image:'heh', time:'9:30'},{food:'bread', address:'your house', image:'lol', time:'9:00'}]};
     },
     componentDidMount: function() {
         this.loadFoodOffersFromServer();
@@ -70,9 +70,7 @@ var FoodOfferList = React.createClass({
                 // `key` is a React-specific concept and is not mandatory for the
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-                <FoodOffer title={foodOffer.title} key={foodOffer.key}>
-                      {foodOffer.title}
-                </FoodOffer>
+                <FoodOffer food={foodOffer.food} address={foodOffer.address} image={foodOffer.image} time={foodOffer.time}  key={foodOffer.key} />
             );
         });
         return (

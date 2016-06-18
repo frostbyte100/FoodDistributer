@@ -17,7 +17,7 @@ var ShareFoodForm = React.createClass({
             food: this.state.food,
             address: this.state.address,
             image: this.state.image,
-            time: this.state.time
+            time: this.state.time,
         }
         $.ajax({
             url: urls.POST.newEvent,

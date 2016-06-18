@@ -29,7 +29,6 @@ var InterfaceComponent = React.createClass({
             nav = 1;
             content = (
                 <Well>
-                    <p>Welcome!</p>
                     <FoodOfferList />
                 </Well>
             );
