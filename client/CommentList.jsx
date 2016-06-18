@@ -29,13 +29,13 @@ var CommentBox = React.createClass({
     },
     loadCommentsFromServer: function() {
         $.ajax({
-            url: urls.GET.allComments,
+            url: urls.GET.success,
             dataType: 'json',
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
-                console.error(urls.GET.allComments, status, err.toString());
+                console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });
     },
