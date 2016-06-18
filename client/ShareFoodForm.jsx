@@ -14,13 +14,13 @@ var ShareFoodForm = React.createClass({
 
     handleSubmit: function() {
         var data = {
-            food: this.state.food,
-            address: this.state.address,
-            image: this.state.image,
-            time: this.state.time,
+            food: "bfadiubfadiu",
+            address: "bfaifbadi",
+            image: "nfofado",
+            time: "ngodas",
         }
         $.ajax({
-            url: urls.POST.newFoodEvent,
+            url: urls.POST.newComment,
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             type: 'POST',
@@ -29,7 +29,7 @@ var ShareFoodForm = React.createClass({
                 console.log(response);
             },
             error: function(xhr, status, err) {
-                console.error(urls.POST.foodevent, status, err.toString());
+                console.error(urls.POST.newComment, status, err.toString());
             }.bind(this)
 
         });

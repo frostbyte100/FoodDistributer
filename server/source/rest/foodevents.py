@@ -5,16 +5,16 @@ from lib.bottle import get, post, request, response
 
 import models
 
-@get('/foodevents/')
+@get('/events/')
 def get_all_events():
     logging.info("Getting all food Events!")
-    foods = models.FoodEvent.query().order(models.FoodEvent.time).fetch(100)
+    foods = models.FoodEvent.query().order(models.FoodEvent.created).fetch(100)
     to_return = [models.foodEvent_to_json(food) for food in foods]
     response.content_type = 'application/json'
     return json.dumps(to_return)
 
 
-@post('/foodevent')
+@post('/event')
 def create_new_event():
     logging.info("creating new food event")
     logging.info(request.json)
