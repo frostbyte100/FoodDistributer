@@ -31,8 +31,9 @@ def create_new_event():
         foodType=request.json.get('food'),
         address=request.json.get('address'),
         image64 = request.json.get('image'),
-        time = datetime.datetime.strptime(request.json.get('time'), '%m-%d-%y-%H-%M').date(),
+        time = request.json.get('time'),
         contact = request.json.get('contact')
+        # time = datetime.datetime.strptime(request.json.get('time'), '%m-%d-%y-%H-%M').date(),
     )
     event.put()
     response.content_type = 'application/json'

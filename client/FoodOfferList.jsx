@@ -8,12 +8,13 @@ var marked = require('marked');
 var urls = require('./urls');
 
 var FoodOffer = React.createClass({
-    
+
     propTypes: {
         food: React.PropTypes.string.isRequired,
         address: React.PropTypes.string.isRequired,
         image: React.PropTypes.string.isRequired,
         time: React.PropTypes.string.isRequired,
+        contact: React.PropTypes.string.isRequired,
         isVisible: React.PropTypes.bool.isRequired,
     },
 
@@ -54,7 +55,13 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleFoodOffer = {
+<<<<<<< HEAD
             margin: 10,     
+=======
+
+            margin: 10,
+
+>>>>>>> 9b277958b9f34c2c501a5757f9ab68e91c9a8bbc
 
         };
         if (!this.state.isVisible) {
@@ -63,12 +70,13 @@ var FoodOffer = React.createClass({
         return (
             <div className="foodOffer" style = {styleFoodOffer}>
                 <span className = "hideButton" onClick = {this.onClick}>&lt;Hide offer&gt; </span>
-                
+
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
                 <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
+                <span className="foodOfferContact" style={styleFood}>{this.props.contact}</span>
                 <img src={this.props.image} style={styleImage} />
-                
+
 
             </div>
         );
@@ -92,7 +100,7 @@ var FoodOfferBox = React.createClass({
     },
 
     getInitialState: function() {
-        return {data: [{food:'cake', address:'my house', image:'heh', time:'9:30'},{food:'bread', address:'your house', image:'lol', time:'9:00'}]};
+        return {data: [{food:'cake', address:'my house', image:'heh', contact:'999-999-9999', time:'9:30'},{food:'bread', address:'your house', image:'lol', contact:'999-999-9999', time:'9:00'}]};
     },
     componentDidMount: function() {
         this.loadFoodOffersFromServer();
@@ -102,7 +110,7 @@ var FoodOfferBox = React.createClass({
     render: function() {
         return (
             <div className="foodOfferBox">
-                
+
                 <h1>Food Offers</h1>
                 <FoodOfferList data={this.state.data} />
             </div>
@@ -121,7 +129,7 @@ var FoodOfferList = React.createClass({
                 // `key` is a React-specific concept and is not mandatory for the
                 // purpose of this tutorial. if you're curious, see more here:
                 // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-                <FoodOffer food={foodOffer.food} address={foodOffer.address} image={foodOffer.image} time={foodOffer.time}  key={foodOffer.key} isVisible={true} />
+                <FoodOffer food={foodOffer.food} address={foodOffer.address} image={foodOffer.image} time={foodOffer.time} contact={foodOffer.contact} key={foodOffer.key} isVisible={true} />
             );
         });
         return (
