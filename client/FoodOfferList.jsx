@@ -39,7 +39,7 @@ var FoodOffer = React.createClass({
             paddingRight: 20,
             fontStyle: 'bold',
         };
-      
+
         return (
             <div className="foodOffer">
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
@@ -56,13 +56,13 @@ var FoodOfferBox = React.createClass({
     },
     loadFoodOffersFromServer: function() {
         $.ajax({
-            url: urls.GET.allEvents,
+            url: urls.GET.allEventsToday,
             dataType: 'json',
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
-                console.error(urls.GET.allEvents, status, err.toString());
+                console.error(urls.GET.allEventsToday, status, err.toString());
             }.bind(this)
         });
     },
@@ -76,14 +76,14 @@ var FoodOfferBox = React.createClass({
         //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
-        
+
           var styleFoodOfferBox = {
             border: "5px solid green"
         };
 
         return (
             <div className="foodOfferBox" style = {styleFoodOfferBox}>
-                
+
                 <h1>Food Offers</h1>
                 <FoodOfferList data={this.state.data} />
             </div>

@@ -1,7 +1,8 @@
 module.exports = {
     GET: {
         allComments: '/comments/',
-        allEvents: '/events/'
+        allEvents: '/events/',
+        allEventsToday: '/today/'
     },
     POST: {
         newComment: '/comment',
