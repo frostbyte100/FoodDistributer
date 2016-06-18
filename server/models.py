@@ -11,6 +11,7 @@ class Event(ndb.Model):
     image64 = ndb.StringProperty(required=False)
     created = ndb.DateTimeProperty(auto_now_add=True)
     time = ndb.DateTimeProperty(required=False)
+    contact = ndb.StringProperty(required=False)
 def comment_to_json(comment):
     return {
         'key': comment.key.urlsafe(),
@@ -26,5 +27,6 @@ def event_to_json(event):
         'food': event.foodType,
         'address': event.address,
         'image': event.image64,
-        'time': str(event.time)
+        'time': str(event.time),
+        'contact': event.contact
     }

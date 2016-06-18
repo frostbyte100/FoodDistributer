@@ -32,6 +32,7 @@ def create_new_event():
         address=request.json.get('address'),
         image64 = request.json.get('image'),
         time = datetime.datetime.strptime(request.json.get('time'), '%m-%d-%y-%H-%M').date()
+        contact =  request.json.get('contact')
     )
     event.put()
     response.content_type = 'application/json'

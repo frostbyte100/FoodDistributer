@@ -18,6 +18,7 @@ var ShareFoodForm = React.createClass({
             address: this.state.address,
             image: this.state.image,
             time: this.state.time,
+            contact.this.state.contact
         }
         $.ajax({
             url: urls.POST.newEvent,
@@ -49,6 +50,7 @@ var ShareFoodForm = React.createClass({
                 <input type="text" placeholder="Address" value={this.state.address} onChange={this.handleChange.bind(this, 'address')} />
                 <input type="text" placeholder="Image" value={this.state.image} onChange={this.handleChange.bind(this, 'image')} />
                 <input type="text" placeholder="Time, ex: 01-01-2016-HH"  value={this.state.time} onChange={this.handleChange.bind(this, 'time')} />
+                <input type="text" placeholder="Contact" value={this.state.contact} onChange={this.handleChange.bind(this, 'contact')} />
                 <input type="submit" value="Post" />
             </form>
         );
