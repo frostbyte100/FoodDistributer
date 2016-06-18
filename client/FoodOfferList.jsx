@@ -8,7 +8,7 @@ var marked = require('marked');
 var urls = require('./urls');
 
 var FoodOffer = React.createClass({
-
+    
     propTypes: {
         food: React.PropTypes.string.isRequired,
         address: React.PropTypes.string.isRequired,
@@ -54,23 +54,23 @@ var FoodOffer = React.createClass({
             fontStyle: 'bold',
         };
         var styleFoodOffer = {
-            border: "5px solid blue",
-            padding: 20,
-            margin: 10
-        }
-    };
+            
+            margin: 10,
+          
 
+        };
         if (!this.state.isVisible) {
             styleFoodOffer["display"] = "none";
         }
         return (
             <div className="foodOffer" style = {styleFoodOffer}>
                 <span className = "hideButton" onClick = {this.onClick}> X </span>
+                
                 <span className="foodOfferFood" style={styleFood}>{this.props.food}</span>
                 <span className="foodOfferAddress" style={styleAddress}>{this.props.address}</span>
                 <span className="foodOfferTime" style={styleTime}>{this.props.time}</span>
                 <img src={this.props.image} style={styleImage} />
-
+                
 
             </div>
         );
@@ -82,13 +82,13 @@ var FoodOfferBox = React.createClass({
     },
     loadFoodOffersFromServer: function() {
         $.ajax({
-            url: urls.GET.allEventsToday,
+            url: urls.GET.allEvents,
             dataType: 'json',
             success: function(data) {
                 this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
-                console.error(urls.GET.allEventsToday, status, err.toString());
+                console.error(urls.GET.allEvents, status, err.toString());
             }.bind(this)
         });
     },
@@ -102,10 +102,9 @@ var FoodOfferBox = React.createClass({
         //setInterval(this.loadFoodOffersFromServer, this.props.pollInterval);
     },
     render: function() {
-
         return (
             <div className="foodOfferBox">
-
+                
                 <h1>Food Offers</h1>
                 <FoodOfferList data={this.state.data} />
             </div>
